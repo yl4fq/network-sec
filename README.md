@@ -10,10 +10,10 @@ Time spent: **X** hours spent in total
 
 1. (Required) Vulnerability Name or ID
   - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
+    - Vulnerability types: XSS
+    - Tested in version: 4.2
     - Fixed in version: 
-  - [ ] GIF Walkthrough: 
+  - [ ] GIF Walkthrough: <img src="1" width="800">
   - [ ] Steps to recreate: 
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
