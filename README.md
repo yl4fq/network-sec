@@ -9,14 +9,15 @@ Time spent: **X** hours spent in total
 ## Pentesting Report
 
 1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
+  - [ ] Summary: Cross Site Scripting
     - Vulnerability types: XSS
     - Tested in version: 4.2
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: <img src="1" width="800">
-  - [ ] Steps to recreate: 
+    - Fixed in version: 4.2.3
+  - [ ] GIF Walkthrough: <img src="2" width="800">
+  - [ ] Steps to recreate: Create a new post with "<a href = ""onmouseover=alert('xss')> new</a>" as the post title. When you publish and click "view page", the alert will pop up when you move your mouse over the title of the post.
   - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+    - [Link 1](https://core.trac.wordpress.org/browser/tags/4.2/src/wp-includes/default-widgets.php)
+    
 1. (Required) Vulnerability Name or ID
   - [ ] Summary: 
     - Vulnerability types:
