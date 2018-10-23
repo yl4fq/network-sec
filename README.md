@@ -2,58 +2,39 @@
 
 # Project 7 - WordPress Pentesting
 
-Time spent: **X** hours spent in total
+Time spent: **5** hours spent in total
 
 > Objective: Find, analyze, recreate, and document **five vulnerabilities** affecting an old version of WordPress
 
 ## Pentesting Report
 
 1. (Required) Vulnerability Name or ID
-  - [ ] Summary: Cross Site Scripting
+  - [ ] Summary: Authenticated Stored Cross Site Scripting
     - Vulnerability types: XSS
     - Tested in version: 4.2
     - Fixed in version: 4.2.3
-  - [ ] GIF Walkthrough: <img src="2" width="800">
-  - [ ] Steps to recreate: Create a new post with "<a href = ""onmouseover=alert('xss')> new</a>" as the post title. When you publish and click "view page", the alert will pop up when you move your mouse over the title of the post.
+  - [ ] GIF Walkthrough: <img src="2.gif" width="800">
+  - [ ] Steps to recreate: Create a new post. Make the post title <a href = “” onmouseover=alert(‘xss’)> new</a> and publish the post. Click preview to see the code being executed in the pop up box.
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/4.2/src/wp-includes/default-widgets.php)
-    
-1. (Required) Vulnerability Name or ID
+1. (Required) CVE 2015-5733
   - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
+    - Vulnerability types: XSS
+    - Tested in version: 4.2
+    - Fixed in version: 4.2.4 
+  - [ ] GIF Walkthrough: <img src="3.gif" width="800">
+  - [ ] Steps to recreate: Create a new menu by clicking on Appearance - Menus. Name the menu, go to "current link", enter a url and use the following script for the url text: <script>alert('xss')</script>, which will pop up as soon as you save it.
+  - [ ] Affected source code:
+    - [Link 1](https://core.trac.wordpress.org/browser/tags/4.2/src/wp-admin/js/nav-menu.js)
+1. (Required) Authenticated Stored Cross-Site Scripting
+  - [ ] Summary: 
+    - Vulnerability types: XSS
+    - Tested in version: 4.2
+    - Fixed in version: 4.2.3
+  - [ ] GIF Walkthrough: <img src="1.gif" width="800">
+  - [ ] Steps to recreate: Create a new post. Go to "Text" and enter the following XSS code and publish the post. Click preview to see the code being executed in the pop up box.
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
 
 ## Assets
 
@@ -68,7 +49,7 @@ GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while doing the work
+As I was trying to determine which vulnerabilities were exploitable by me, I went on some false leads trying to exploit vulnerabilities that were too difficult for me to exploit.
 
 ## License
 
